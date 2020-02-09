@@ -1,6 +1,6 @@
 {
   "name": "vuejs-base-course",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "vuejs project",
   "main": "index.js",
   "scripts": {
