@@ -1,7 +1,15 @@
 const express = require("express");
+const path = require('path');
 const app = express();
 
 app.use(express.static("dist"));
+
+app.use(["/morty"], function(request, response) {
+  let reqPath = path.join(__dirname, "./");
+  response.sendFile(
+    path.resolve(reqPath, "index.html")
+  );
+});
 
 app.get(["/api"], function(request, response) {
   setTimeout(() =>
@@ -10,7 +18,7 @@ app.get(["/api"], function(request, response) {
       .send(
         { text: 'Hello world!' }
       )
-  , 2000);
+  , 1000);
   });
 
 app.listen(3000, () => console.log("Listening on port 3000!"));

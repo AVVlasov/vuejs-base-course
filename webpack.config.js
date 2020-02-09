@@ -7,7 +7,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-    entry: "./src/index.js",
+    mode: 'development',
+    entry: ["./src/index.js"],
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, outputDirectory),
@@ -48,7 +49,13 @@ module.exports = {
             'typeof window': JSON.stringify('object')
         }),
         new webpackCopy([
-            { from: 'stubs/index.html' }
+            { from: 'stubs/index.html' },
+            { from: 'node_modules/vue/dist/vue.min.js', to: 'extLib/vue.min.js' },
+            { from: 'node_modules/vue-material/dist/vue-material.min.js', to: 'extLib/vue-material.min.js' }
           ])
-    ]
+    ],
+    externals: {
+        vue: 'Vue',
+        'vue-material': 'VueMaterial'
+    }
 };

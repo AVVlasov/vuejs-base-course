@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build && node stubs/index.js"
+    "start": "nodemon ./stubs/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   "homepage": "https://github.com/AVVlasov/vuejs-base-course#readme",
   "dependencies": {
     "axios": "0.19.2",
-    "vue": "2.6.11"
+    "vue": "2.6.11",
+    "vue-material": "1.0.0-beta-11"
   },
   "devDependencies": {
     "@babel/cli": "7.8.3",
@@ -39,8 +40,10 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
     "vue-loader": "15.8.3",
+    "vue-template-compiler": "2.6.11",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
-    "vue-template-compiler": "2.6.11"
+    "webpack-dev-middleware": "3.7.2",
+    "webpack-hot-client": "4.1.2"
   }
 }
