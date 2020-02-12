@@ -43,13 +43,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new webpack.DefinePlugin({
             'typeof window': JSON.stringify('object')
         }),
         new webpackCopy([
-            { from: 'stubs/index.html' },
+            // { from: 'stubs/index.html' },
             { from: 'node_modules/vue/dist/vue.min.js', to: 'extLib/vue.min.js' },
             { from: 'node_modules/vue-material/dist/vue-material.min.js', to: 'extLib/vue-material.min.js' }
           ])

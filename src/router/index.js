@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Rick from '../dashboards/rick.vue'
-import Morty from '../dashboards/morty.vue'
+// import Morty from '../dashboards/morty.vue'
 
 Vue.use(VueRouter)
 
@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/morty',
     name: 'morty',
-    component: Morty
+    component: ()=> import(/* webpackChunkName: "morty" */ '../dashboards/morty.vue')
   }
 ]
 
