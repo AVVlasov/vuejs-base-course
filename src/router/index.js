@@ -1,20 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Rick from '../dashboards/rick.vue'
-// import Morty from '../dashboards/morty.vue'
+import One from '../dashboards/one.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'rick',
-    component: Rick
+    name: 'one',
+    component: One
   },
   {
-    path: '/morty',
-    name: 'morty',
-    component: ()=> import(/* webpackChunkName: "morty" */ '../dashboards/morty.vue')
+    path: '/multiply',
+    name: 'multiply',
+    component: ()=> import(/* webpackChunkName: "multiply" */ '../dashboards/multiply.vue')
   }
 ]
 

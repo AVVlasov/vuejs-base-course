@@ -5,7 +5,7 @@
 <script>
 import axios from 'axios'
 import PersonalCard from '../components/personal-card.vue'
-import getMorty from '../__data__/actions/get-rick-morty'
+import { API_URLS } from '../__data__/constants/api-urls'
 
 export default {
   name: 'morty',
@@ -25,8 +25,12 @@ export default {
       alert('click')
     }
   },
-  created: function () {
-    getMorty(this.searchName).then((res) => this.items = res)
+  created: async function () {
+    let res = await axios.get(API_URLS.RANDOM_USERS, {params :{
+      results: 10
+    }});
+    let { results } = res.data;
+    this.items = results
   }
 
 }

@@ -5,7 +5,8 @@
 <script>
 import axios from 'axios'
 import PersonalCard from '../components/personal-card.vue'
-import getRick from '../__data__/actions/get-rick-morty'
+import { API_URLS } from '../__data__/constants/api-urls'
+
 
 export default {
   name: 'rick',
@@ -15,12 +16,13 @@ export default {
   data() {
       return {
           text: 'Идет загрузка...',
-          searchName: 'rick',
           items: []
       }
   },
-  created: function () {
-    getRick(this.searchName).then((res) => this.items = res)
+  created: async function () {
+    let res = await axios.get(API_URLS.RANDOM_USERS);
+    let { results } = res.data;
+    this.items = results
   }
 
 }

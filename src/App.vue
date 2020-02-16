@@ -6,15 +6,15 @@
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
 
-            <span class="md-title">RICK AND MORTY3</span>
+            <span class="md-title">Random users</span>
           </div>
 
         </div>
 
         <div class="md-toolbar-row">
           <md-tabs md-sync-route class="md-primary">
-            <md-tab id="tab-rick" to="/" md-label="Rick" exact></md-tab>
-            <md-tab id="tab-mortyt" to="/morty" md-label="Morty"></md-tab>
+            <md-tab id="tab-one" to="/" md-label="One" exact></md-tab>
+            <md-tab id="tab-multiply" to="/multiply" md-label="Multiply"></md-tab>
           </md-tabs>
         </div>
       </md-app-toolbar>
