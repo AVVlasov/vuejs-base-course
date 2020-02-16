@@ -1,5 +1,5 @@
 <template>
-  <personal-card :items="items"/>
+  <personal-card/>
 </template>
 
 <script>
@@ -16,13 +16,9 @@ export default {
   data() {
       return {
           text: 'Идет загрузка...',
-          items: []
+          items: [],
+          
       }
-  },
-  created: async function () {
-    let res = await axios.get(API_URLS.RANDOM_USERS);
-    let { results } = res.data;
-    this.items = results
   }
 
 }

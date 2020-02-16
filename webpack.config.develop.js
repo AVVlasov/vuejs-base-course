@@ -53,11 +53,13 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpackCopy([
             { from: 'node_modules/vue/dist/vue.min.js', to: 'extLib/vue.min.js' },
-            { from: 'node_modules/vue-material/dist/vue-material.min.js', to: 'extLib/vue-material.min.js' }
+            { from: 'node_modules/vue-material/dist/vue-material.min.js', to: 'extLib/vue-material.min.js' },
+            { from: 'node_modules/vuex/dist/vuex.min.js', to: 'extLib/vuex.min.js' }
           ])
     ],
     externals: {
         vue: 'Vue',
-        'vue-material': 'VueMaterial'
+        'vue-material': 'VueMaterial',
+        'vuex': 'Vuex'
     }
 };

@@ -36,36 +36,28 @@ import { API_URLS } from "../__data__/constants/api-urls";
 
 export default {
   name: "PersonalCard",
-  props: {
-    items: Array
-  },
   data() {
     return {
-      countResults: "",
+      searchParams: 1,
       gender: 'male',
-      items: []
     };
+  },
+  computed: {
+    items() {
+      return this.$store.getters.getUsers
+    } 
+  },
+  created: async function () {
+    const { gender, searchParams } = this
+      await this.$store.dispatch('getUsers', {gender, searchParams})
   },
   methods: {
     setSearchVal: function(event) {
       this.searchParams = event.target.value;
     },
     searchUsers: async function() {
-      try {
-        let res = await axios.get(API_URLS.RANDOM_USERS, {
-          params: {
-            results: this.searchParams,
-            gender: this.gender
-          }
-        });
-
-        if (res) {
-          let { results } = res.data;
-          this.items = results;
-        }
-      } catch (e) {
-        console.log("error!!!", e);
-      }
+      const { gender, searchParams } = this
+      await this.$store.dispatch('getUsers', {gender, searchParams})
     }
   }
 };

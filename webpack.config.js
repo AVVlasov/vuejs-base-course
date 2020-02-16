@@ -49,6 +49,7 @@ module.exports = {
     ],
     externals: {
         vue: 'Vue',
-        'vue-material': 'VueMaterial'
+        'vue-material': 'VueMaterial',
+        'vuex': 'Vuex'
     }
 };
