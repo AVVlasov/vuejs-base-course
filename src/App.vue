@@ -6,7 +6,7 @@
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
 
-            <span class="md-title">RICK AND MORTY</span>
+            <span class="md-title">RICK AND MORTY3</span>
           </div>
 
         </div>
