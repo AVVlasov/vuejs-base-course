@@ -8,8 +8,18 @@ import router from './router'
 
 Vue.use(VueMaterial)
 
-new Vue({
+const VueInstance = new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+})
+
+export default VueInstance;
+
+export const mount = Сomponent => {
+  Сomponent.$mount('#app')
+};
+
+export const unmount = () => {
+  VueInstance.$destroy()
+};

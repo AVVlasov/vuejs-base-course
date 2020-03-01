@@ -34,6 +34,19 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler));
 
+const webpackConfigBootstrap = require("../webpack.bootstrap");
+const compilerBootstrap = webpack(webpackConfigBootstrap);
+
+app.use(
+  webpackDevMiddleware(compilerBootstrap, {
+    publicPath: webpackConfigBootstrap.output.publicPath,
+    stats: false,
+    noInfo: true
+  })
+);
+
+app.use(webpackHotMiddleware(compilerBootstrap));
+
 app.use(["/"], function(request, response) {
   response.render("index.hbs", {
     ...config

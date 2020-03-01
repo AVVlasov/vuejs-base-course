@@ -14,15 +14,18 @@
     </head>
 
 <body>
-     <script type="text/javascript">
-       window.config = {{{toJSON config}}};
-       window.navigation = {{{toJSON navigation}}};
+    <script type="text/javascript">
+        window.config = {{{ toJSON config }}};
+        window.navigation = {{{ toJSON navigation }}};
     </script>
-    <script src="./extLib/vue.min.js"></script>
-    <script src="./extLib/vue-material.min.js"></script>
-    <script src="./extLib/vuex.min.js"></script>
+    <script src="./bootstrap/bootstrap.js"></script>
+
+    <script>
+        bootstrap({
+            apps: {{{ toJSON apps }}},
+    })
+    </script>
     <div id="app">VUE поломался ;(</div>
-    <script src="./main.js"></script>
 </body>
 
 </html>
